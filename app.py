@@ -25,9 +25,11 @@ mongo = PyMongo(app)
 # Testing area
 
 @app.route("/")
-def test():
-    """ test if works """
-    return "Test, can you see me?"
+@app.route("/get_tasks")
+def get_tasks():
+    """ Can`t find tasks, save anyway - then debug """
+    tasks = mongo.db.tasks.find()
+    return render_template("tasks/tasks.html", tasks=tasks)
 
 
 if __name__ == "__main__":

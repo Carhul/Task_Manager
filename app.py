@@ -26,8 +26,8 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def test():
-    """ Test if I can find the tasks """
-    return "TEST. can you see me"
+    """ test if works """
+    return "Test, can you see me?"
 
 
 if __name__ == "__main__":

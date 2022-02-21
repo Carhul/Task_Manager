@@ -28,7 +28,7 @@ mongo = PyMongo(app)
 @app.route("/get_tasks")
 def get_tasks():
     """ Can`t find tasks, save anyway - then debug """
-    tasks = mongo.db.tasks.find()
+    tasks = list(mongo.db.tasks.find())
     return render_template("tasks/tasks.html", tasks=tasks)
 
 

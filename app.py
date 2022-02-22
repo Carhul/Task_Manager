@@ -27,7 +27,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_tasks")
 def get_tasks():
-    tasks = mongo.db.tasks.find()
+    # Get tasks from taskmanager_database
+    tasks = list(mongo.db.tasks.find())
     return render_template("tasks/tasks.html", tasks=tasks)
 
 
@@ -35,13 +36,13 @@ def get_tasks():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    """ Search tasks """
+    # Search tasks
     query = request.form.get("query")
     tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
     return render_template("tasks/tasks.html", tasks=tasks)
 
 
-# ----- Sign Up Page -----
+# ----- Sign Up Function -----
 
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():

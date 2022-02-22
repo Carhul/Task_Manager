@@ -208,6 +208,23 @@ def get_departments():
 
 # ----- Add Department -----
 
+@app.route("/add_department", methods=["GET", "POST"])
+def add_department():
+    """ Add department """
+    if request.method == "POST":
+        department = {
+            "department_name": request.form.get("department_name")
+        }
+        mongo.db.departments.insert_one(department)
+        flash("New Department Added")
+        return redirect(url_for("get_departments"))
+
+    return render_template("departments/add_department.html")
+
+
+# ----- Edit Department -----
+
+
 
 
 if __name__ == "__main__":

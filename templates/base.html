@@ -34,8 +34,8 @@
                     {% endif %}
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('sign_in') }}">Sign In</a></li>
                     <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
+                    <li><a href="{{ url_for('sign_in') }}">Sign In</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -55,8 +55,8 @@
             {% endif %}
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
-            <li><a href="{{ url_for('sign_in') }}">Sign In</a></li>
             <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
+            <li><a href="{{ url_for('sign_in') }}">Sign In</a></li>
             {% endif %}
         </ul>
     </header>

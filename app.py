@@ -23,7 +23,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# Testing area - try to figure out what`s wrong with WERKZEUG routing error !!
+# Testing area - try to figure out what`s wrong with not conected error !!
 
 @app.route("/")
 @app.route("/get_tasks")
@@ -41,29 +41,48 @@ def search():
     return render_template("tasks/tasks.html", tasks=tasks)
 
 
+# ----- Sign Up Page -----
+
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
-    """ Check if username already exists in db """
-    if request.method == "POST":
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+    """
+    Allows user to sign up for an account,
+    rendering sign_up.html.
+    Prevention of username duplicates included.
+    """
+    if "user" not in session:
+        if request.method == "POST":
+            # Check if username already exists
+            existing_user = mongo.db.users.find_one(
+                {"username": request.form.get(
+                    "username").lower()})
 
-        if existing_user:
-            flash("Username already exists")
-            return redirect(url_for("sign_up"))
+            # Prevents duplicates
+            if existing_user:
+                flash("Username already exists")
+                return redirect(url_for("sign_up"))
 
-        sign_up = {
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
-        }
-        mongo.db.users.insert_one(sign_in)
+            # Send collected data to user collection
+            sign_up = {
+                "username": request.form.get("username").lower(),
+                "password": generate_password_hash(
+                    request.form.get("password"))
+            }
+            mongo.db.users.insert_one(sign_in)
 
-        # Put the new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
-        flash("Welcome Onboard!")
-        return redirect(url_for("users/profile", username=session["user"]))
+            # Welcome user
+            session["user"] = request.form.get("username").lower()
+            flash("Welcome Onboard!")
+            return redirect(url_for("profile",
+                                    username=session["user"]))
 
-    return render_template("users/sign_up.html")
+        return render_template("users/sign_up.html")
+
+    else:
+        # If user logged in
+        flash("You already have an account")
+        return redirect(url_for("profile",
+                                username=session["user"]))
 
 
 @app.route("/sign_in", methods=["GET", "POST"])

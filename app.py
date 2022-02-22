@@ -115,6 +115,20 @@ def sign_in():
     return render_template("users/sign_in.html")
 
 
+# ----- Profile Page -----
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    """ Grab the session user's username from db """
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        return render_template("users/profile.html", username=username)
+
+    return redirect(url_for("sign_in"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

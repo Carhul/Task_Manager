@@ -1,5 +1,4 @@
-# Imports
-""" Necessary Libary Imports """
+# ----- Libary Imports -----
 
 import os
 from flask import (
@@ -12,7 +11,7 @@ if os.path.exists("env.py"):
     import env
 
 
-# Flask App Configuration
+# ----- Flask App Configuration -----
 
 app = Flask(__name__)
 
@@ -23,13 +22,11 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# Testing area - try to figure out what`s wrong with not conected error !!
-
 @app.route("/")
 @app.route("/get_tasks")
 def get_tasks():
-    """ Can`t find tasks, save anyway - then debug """
-    return "Hello"
+    tasks = mongo.db.tasks.find()
+    return render_template("tasks/tasks.html", tasks=tasks)
 
 
 if __name__ == "__main__":

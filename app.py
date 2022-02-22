@@ -142,7 +142,7 @@ def logout():
 # ----- Create Task -----
 
 @app.route("/create_task", methods=["GET", "POST"])
-def add_task():
+def create_task():
     """ Create task """
     if request.method == "POST":
         is_urgent = "on" if request.form.get("is_urgent") else "off"

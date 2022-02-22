@@ -129,7 +129,7 @@ def profile(username):
     return redirect(url_for("sign_in"))
 
 
-# ----- Log Out Functionality -----
+# ----- Log Out -----
 
 @app.route("/logout")
 def logout():
@@ -137,6 +137,56 @@ def logout():
     flash("You are now logged out")
     session.pop("user")
     return redirect(url_for("sign_in"))
+
+
+# ----- Create Task -----
+
+@app.route("/create_task", methods=["GET", "POST"])
+def add_task():
+    """ Create task """
+    if request.method == "POST":
+        is_urgent = "on" if request.form.get("is_urgent") else "off"
+        task = {
+            "department_name": request.form.get("department_name"),
+            "task_name": request.form.get("task_name"),
+            "task_description": request.form.get("task_description"),
+            "is_urgent": is_urgent,
+            "due_date": request.form.get("due_date"),
+            "created_by": session["user"]
+        }
+        mongo.db.tasks.insert_one(task)
+        flash("Task Successfully Created")
+        return redirect(url_for("get_tasks"))
+
+    departments = mongo.db.departments.find().sort("department_name", 1)
+    return render_template("tasks/create_task.html", departments=departments)
+
+
+# ----- Edit Task -----
+
+@app.route("/edit_task/<task_id>", methods=["GET", "POST"])
+def edit_task(task_id):
+    """ Edit task """
+    if request.method == "POST":
+        is_urgent = "on" if request.form.get("is_urgent") else "off"
+        submit = {
+            "department_name": request.form.get("department_name"),
+            "task_name": request.form.get("task_name"),
+            "task_description": request.form.get("task_description"),
+            "is_urgent": is_urgent,
+            "due_date": request.form.get("due_date"),
+            "created_by": session["user"]
+        }
+        mongo.db.tasks.replace_one({"_id": ObjectId(task_id)}, submit)
+        flash("Task Successfully Updated")
+
+    task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    departments = mongo.db.departments.find().sort("department_name", 1)
+    return render_template("tasks/edit_task.html", task=task,
+                           departments=departments)
+
+
+# ----- Delete Task -----
 
 
 if __name__ == "__main__":

@@ -21,12 +21,23 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 # ----- Get tasks -----
 
 @app.route("/")
 @app.route("/get_tasks")
 def get_tasks():
     tasks = mongo.db.tasks.find()
+    return render_template("tasks/tasks.html", tasks=tasks)
+
+
+# ----- Search function -----
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    """ Search tasks """
+    query = request.form.get("query")
+    tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
     return render_template("tasks/tasks.html", tasks=tasks)
 
 

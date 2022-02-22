@@ -244,6 +244,12 @@ def edit_department(department_id):
 
 # ----- Delete Department -----
 
+@app.route("/delete_department/<department_id>")
+def delete_department(department_id):
+    """ Delete category """
+    mongo.db.departments.delete_one({"_id": ObjectId(department_id)})
+    flash("Department Successfully Deleted")
+    return redirect(url_for("get_departments"))
 
 
 if __name__ == "__main__":

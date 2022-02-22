@@ -50,7 +50,7 @@ def sign_up():
 
         if existing_user:
             flash("Username already exists")
-            return redirect(url_for("users/sign_up"))
+            return redirect(url_for("sign_up"))
 
         sign_up = {
             "username": request.form.get("username").lower(),

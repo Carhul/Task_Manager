@@ -188,6 +188,16 @@ def edit_task(task_id):
 
 # ----- Delete Task -----
 
+@app.route("/delete_task/<task_id>")
+def delete_task(task_id):
+    """ Delete task """
+    mongo.db.tasks.delete_one({"_id": ObjectId(task_id)})
+    flash("Task Successfully Deleted")
+    return redirect(url_for("get_tasks"))
+
+
+# ----- Get Departments -----
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

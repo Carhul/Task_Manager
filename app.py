@@ -198,6 +198,17 @@ def delete_task(task_id):
 
 # ----- Get Departments -----
 
+@app.route("/get_departments")
+def get_departments():
+    """ Get department """
+    departments = list(mongo.db.departments.find().sort("department_name", 1))
+    return render_template("departments/departments.html",
+                           departments=departments)
+
+
+# ----- Add Department -----
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

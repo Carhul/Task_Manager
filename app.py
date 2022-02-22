@@ -115,7 +115,7 @@ def sign_in():
     return render_template("users/sign_in.html")
 
 
-# ----- Profile Page -----
+# ----- Profile Page Functionality -----
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
@@ -126,6 +126,16 @@ def profile(username):
     if session["user"]:
         return render_template("users/profile.html", username=username)
 
+    return redirect(url_for("sign_in"))
+
+
+# ----- Log Out Functionality -----
+
+@app.route("/logout")
+def logout():
+    """ Remove user from session cookie """
+    flash("You are now logged out")
+    session.pop("user")
     return redirect(url_for("sign_in"))
 
 

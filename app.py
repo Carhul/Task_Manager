@@ -38,7 +38,7 @@ def get_tasks():
 def search():
     # Search tasks
     query = request.form.get("query")
-    tasks = mongo.db.tasks.find({"$text": {"$search": query}})
+    tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
     return render_template("tasks/tasks.html", tasks=tasks)
 
 

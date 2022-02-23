@@ -14,3 +14,7 @@
     margin: 5px;
     line-height: 42px;
 }
+
+nav .brand-logo {
+    padding-left: 10px;
+}

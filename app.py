@@ -22,7 +22,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# ----- Get tasks -----
+# ----- Get All tasks / Homepage -----
 
 @app.route("/")
 @app.route("/get_tasks")
@@ -38,7 +38,7 @@ def get_tasks():
 def search():
     # Search tasks
     query = request.form.get("query")
-    tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
+    tasks = mongo.db.tasks.find({"$text": {"$search": query}})
     return render_template("tasks/tasks.html", tasks=tasks)
 
 

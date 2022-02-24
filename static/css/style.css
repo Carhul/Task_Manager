@@ -4,6 +4,10 @@
 
 /* All Tasks Page */
 
+/* Background Image */
+
+
+
 /* Provide space between the small buttons */
 .btn-small {
     margin: 3px;
@@ -32,7 +36,6 @@ nav .brand-logo {
 /* Color for dropdown */
 .select-dropdown li.disabled, .select-dropdown li.disabled>span, .select-dropdown li.optgroup {
     color: white;
-    background-color: #a1887f;
 }
 
 .dropdown-content li a, .dropdown-content li span {

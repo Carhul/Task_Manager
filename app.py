@@ -252,6 +252,23 @@ def delete_department(department_id):
     return redirect(url_for("get_departments"))
 
 
+# ----- Error Handling -----
+
+@app.errorhandler(404)
+def page_not_found(e):
+    """
+    404 error handler
+    """
+    return render_template("error_handlers/404.html"), 404
+
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    """
+    500 error handler
+    """
+    return render_template("error_handlers//500.html"), 500
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

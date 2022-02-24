@@ -2,9 +2,11 @@
     line-height: 2;
 }
 
+/* All Tasks Page */
+
 /* Provide space between the small buttons */
 .btn-small {
-    margin: 5px;
+    margin: 3px;
 }
 
 .collapsible-header .col strong {

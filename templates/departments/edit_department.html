@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="light-blue-text text-darken-4 center-align">Edit Department</h3>
+    <h3 class="brown-text text-lighten-2 center-align">Edit Department</h3>
 
-    <div class="row card-panel grey lighten-5">
+    <div class="row card-panel brown lighten-4">
         <form class="col s12" method="POST" action="{{ url_for('edit_department', department_id=department._id) }}">
             <!-- Department name -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fa-solid fa-folder-open prefix light-blue-text text-darken-4"></i>
+                    <i class="fa-solid fa-folder-open prefix white-text"></i>
                     <input id="department_name" name="department_name" minlength="3" maxlength="25" type="text" value="{{ department.department_name }}" class="validate"
                         required>
                     <label for="department_name">Department Name</label>
@@ -17,10 +17,10 @@
             <!-- Submit button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <a href="{{ url_for('get_departments') }}" class="btn-large red text-shadow">
+                    <a href="{{ url_for('get_departments') }}" class="btn-large white-text brown lighten-2">
                         Cancel <i class="fa-solid fa-circle-xmark"></i>
                     </a>
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                    <button type="submit" class="btn-large white brown-text text-lighten-2">
                         Edit Department <i class="fa-solid fa-pen-to-square right"></i>
                     </button>
                 </div>

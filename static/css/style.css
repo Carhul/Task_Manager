@@ -14,3 +14,8 @@
 nav .brand-logo {
     padding-left: 10px;
 }
+
+/* Label Color for input fields */
+.input-field label {
+    color: white;
+}

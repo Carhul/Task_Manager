@@ -2,6 +2,7 @@
     line-height: 2;
 }
 
+/* Provide space between the small buttons */
 .btn-small {
     margin: 5px;
 }
@@ -11,6 +12,7 @@
     line-height: 42px;
 }
 
+/* Push Task Manager to the right */
 nav .brand-logo {
     padding-left: 10px;
 }
@@ -18,4 +20,19 @@ nav .brand-logo {
 /* Label Color for input fields */
 .input-field label {
     color: white;
+}
+
+/* Color for placeholder */
+.select-wrapper input.select-dropdown {
+    color: white;
+}
+
+/* Color for dropdown */
+.select-dropdown li.disabled, .select-dropdown li.disabled>span, .select-dropdown li.optgroup {
+    color: white;
+    background-color: #a1887f;
+}
+
+.dropdown-content li a, .dropdown-content li span {
+    color: #a1887f;
 }

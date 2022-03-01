@@ -83,3 +83,10 @@ nav .brand-logo {
 .datepicker-table abbr {
     color: #a1887f;
 }
+
+.page-footer {
+    background-color: #d7ccc8;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}

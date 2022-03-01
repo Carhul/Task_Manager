@@ -7,12 +7,16 @@
     background-color: #d7ccc8;
 }
 
+.base-bgcolor2 {
+    background-color: white;
+}
+
 .base-color {
     color: white;
 }
 
 .base-color2 {
-    color: #a1887f;
+    color: #d7ccc8;
 }
 
 .sidenav li>a {
@@ -35,6 +39,11 @@ body {
 
 .btn {
     margin: 5px;
+}
+
+/* Buttons hover */
+.btn:hover, .btn-large:hover, .btn-small:hover {
+    background-color: #a1887f;
 }
 
 .collapsible-header .col strong {

@@ -269,6 +269,7 @@ def internal_server_error(e):
     """
     return render_template("error_handlers//500.html"), 500
 
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

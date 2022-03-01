@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block header %}
+
+    <!-- Page Title -->
+    <h2>Page Does Not Exist!</h2>
+    
+{% endblock %}
+
+{% block content %}
+
+    <div class="error-page">
+        
+        <!-- 404 Img -->
+        <img class="error-img" src="../static/images/daniel_tafjord_unsplash.jpg" alt="Page does not exist, click button to return home">
+
+        <!-- Credit to Rebecca Tracey:
+            https://github.com/rebeccatraceyt/bake-it-til-you-make-it/blob/master/templates/error_handlers/404.html -->
+        <!-- Error Text -->
+        <h1>Oops!</h1>
+        <p>This page does not exist!</p>
+        <p>Click <a class="link-color" href="{{ url_for('get_tasks') }}">here</a> to return to safety</p>
+        
+    </div>
+{% endblock %}

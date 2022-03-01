@@ -253,9 +253,10 @@ def delete_department(department_id):
 
 
 # ----- Error Handling -----
-
+# Credit to Rebecca Tracey:
+# https://github.com/rebeccatraceyt/bake-it-til-you-make-it/blob/master/app.py
 @app.errorhandler(404)
-def page_not_found(e):
+def page_not_found():
     """
     404 error handler
     """
@@ -263,7 +264,7 @@ def page_not_found(e):
 
 
 @app.errorhandler(500)
-def internal_server_error(e):
+def internal_server_error():
     """
     500 error handler
     """

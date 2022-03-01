@@ -20,11 +20,11 @@
 
     <header>
         <!-- Top Navbar -->
-        <nav class="nav-extended brown lighten-4">
+        <nav class="nav-extended base-bgcolor">
             <div class="nav-wrapper">
                 <a href="{{ url_for('get_tasks') }}" class="brand-logo">Task Manager</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fa-solid fa-bars"></i></a>
-                <ul class="right hide-on-med-and-down">
+                <ul class="right hide-on-med-and-down base-bgcolor">
                     <li><a href="{{ url_for('get_tasks') }}">All Tasks</a></li>
                     {% if session.user %}
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
@@ -42,7 +42,7 @@
         </nav>
 
         <!-- Mobile Sidenav -->
-        <ul class="sidenav" id="mobile-demo">
+        <ul class="sidenav base-bgcolor base-color" id="mobile-demo">
             <li>
                 <h4 class="center-align">Task Manager</h4>
             </li>
@@ -65,16 +65,16 @@
     <footer class="page-footer">
         <div class="container">
           <div class="row">
-            <div class="col l6 s6">
-              <h5 class="white-text">For educational purpose only</h5>
-              <p class="white-text">This Task Manager website is made for educational purpose only. Feel free to visit me by following the provided links.</p>
+            <div class="col l6 s12">
+              <h5 class="base-color">For educational purpose only</h5>
+              <p class="base-color">This Task Manager website is made for educational purpose only. Feel free to visit me by following the provided links.</p>
             </div>
-            <div class="col l4 offset-l2 s6">
-              <h5 class="white-text">Links</h5>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="base-color">Links</h5>
               <ul>
-                <li><a class="white-text" href="https://github.com/Carhul"><i class="fa-brands fa-github"></i> GitHub</a></li>
-                <li><a class="white-text" href="https://slack.com/"><i class="fa-brands fa-slack"></i> Slack</a></li>
-                <li><a class="white-text" href="https://www.linkedin.com/in/carolinehull%C3%B8en/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+                <li><a class="base-color" href="https://github.com/Carhul"><i class="fa-brands fa-github"></i> GitHub</a></li>
+                <li><a class="base-color" href="https://slack.com/"><i class="fa-brands fa-slack"></i> Slack</a></li>
+                <li><a class="base-color" href="https://www.linkedin.com/in/carolinehull%C3%B8en/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
               </ul>
             </div>
           </div>

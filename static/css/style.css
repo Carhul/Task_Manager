@@ -2,7 +2,22 @@
     line-height: 2;
 }
 
-/* All Tasks Page */
+/* All pages */
+.base-bgcolor {
+    background-color: #d7ccc8;
+}
+
+.base-color {
+    color: white;
+}
+
+.base-color2 {
+    color: #a1887f;
+}
+
+.sidenav li>a {
+    color: white;
+}
 
 /* Background Image */
 body {
@@ -99,4 +114,28 @@ nav .brand-logo {
     position: fixed;
     width: 100%;
     padding-top: 0px;
+}
+
+/* Error Pages */
+
+.error-img {
+    width: 50%;
+    border-style: solid;
+    margin-top: 20px;
+}
+.error-page h1 {
+    font-size: 5em;
+    color: white;
+}
+.error-page p {
+    font-size: 1.5em;
+    color: white;
+} 
+
+.error-page {
+    text-align: center;
+}
+
+.link-color {
+    color: sandybrown;
 }

@@ -27,7 +27,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_tasks")
 def get_tasks():
-    # Get tasks from taskmanager_database
+    """ Get tasks from taskmanager_database """
     tasks = list(mongo.db.tasks.find())
     return render_template("tasks/tasks.html", tasks=tasks)
 
@@ -36,7 +36,7 @@ def get_tasks():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    # Search tasks
+    """ Search tasks """
     query = request.form.get("query")
     tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
     return render_template("tasks/tasks.html", tasks=tasks)
@@ -86,7 +86,7 @@ def sign_up():
                                 username=session["user"]))
 
 
-# ----- Sign Up Page -----
+# ----- Sign In Page -----
 
 @app.route("/sign_in", methods=["GET", "POST"])
 def sign_in():
@@ -96,12 +96,12 @@ def sign_in():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # Ensure hashed password matches user input
+            """ Ensure hashed password matches user input """
             if check_password_hash(existing_user["password"],
                                    request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Hello, {}".format(request.form.get("username")))
-                return redirect(url_for("profile", username=session["user"]))
+                return redirect(url_for("get_tasks", username=session["user"]))
             else:
                 # Invalid password match
                 flash("Incorrect Username and/or Password")

@@ -163,4 +163,5 @@ All the colours where picked to ensure a calm and harmonious impression.
     * Text: 
     
 Color Sheme from [Coolors](https://coolors.co/)
-!
+![color_sheme](static/images/wireframes/color_sheme.png)
+

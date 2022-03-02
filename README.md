@@ -146,6 +146,8 @@ The design of this application has been created based on a "keep it simple" mind
 
 When entering the application you immediately see all tasks, the user does not have to sign up / in unless they want to create, edit or delete a task. 
 
+[Jinja](https://jinja.palletsprojects.com/) was used to extend the `base.html` page, for consistency accross all pages.
+
 * Fonts
 
 INSERT FONT HERE WHEN READY 
@@ -165,3 +167,49 @@ All the colours where picked to ensure a calm and harmonious impression.
 Color Sheme from [Coolors](https://coolors.co/)
 ![color_sheme](static/images/wireframes/color_sheme.png)
 
+### Features ###
+
+The web application has a responsive layout with a reverse mindset relative to the mobile-first way of thinking. As it will be used at the office, and desktop screen.
+But of course it can also be used from a phone.
+
+Features that have been implemented:
+
+* Search Tasks
+* Sign Up
+* Sign In
+* Create, edit and delete Tasks
+* Create, edit and delete Departments
+
+* Flash messages if username exists or wrong password 
+* Flash messages when logged in or out
+* Flash messages when manage tasks or departments
+
+* Custom 404 Page
+* Custom 500 Page
+* Favicon
+
+* Links to the developers **GitHub** and **LinkedIn**
+* General link to **Slack**, just because it is amazing
+
+Features that will be implemented in the future:
+
+* Sort Taks by date
+* See how many tasks that been solved
+* Assign tasks to another user 
+* Anonnymous suggestion function
+
+### Technologies ###
+### Languages ###
+### Tools ###
+### Libraries ###
+### Database Management ###
+
+### Testing ###
+
+### Bugs ###
+
+### Deployment ###
+
+### Credit ###
+
+### Acknowledgements ###

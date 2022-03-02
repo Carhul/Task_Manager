@@ -69,9 +69,6 @@
     {% if messages %}
     {% for message in messages %}
     <div id="flash-box" class="alert alert-dismissible fade show center-align" role="alert">
-      <button id="flash-btn" type="button" class="close base-color base-bgcolor" data-dismiss="alert" aria-label="Close">
-        <i class="fa-solid fa-circle-xmark"></i>
-      </button>
       <p class="base-color" id="flash-text">{{ message }}</p>
     </div>
     {% endfor %}

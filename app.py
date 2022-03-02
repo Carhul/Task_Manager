@@ -118,7 +118,7 @@ def sign_in():
             if check_password_hash(existing_user["password"],
                                    request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Hello, {}".format(request.form.get("username")))
+                flash("Hello, {}! Have a good day at the office!".format(request.form.get("username")))
                 return redirect(url_for("get_tasks", username=session["user"]))
             else:
                 # Invalid password match
@@ -152,7 +152,7 @@ def profile(username):
 @app.route("/logout")
 def logout():
     """ Remove user from session cookie """
-    flash("You are now logged out")
+    flash("You are now logged out! Have a nice day!")
     session.pop("user")
     return redirect(url_for("sign_in"))
 

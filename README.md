@@ -124,3 +124,21 @@ Wireframes was made in [Balsamiq](https://balsamiq.com/). As in previous project
 
 ### Design for mobile device: ###
 
+![all_tasks_landingp_mob](static/images/wireframes/all_tasks_landingp_mob.png)
+![sign_up_mob](static/images/wireframes/sign_up_mob.png)
+![sign_in_mob](static/images/wireframes/sign_in_mob.png)
+![create_task_mob](static/images/wireframes/create_task_mob.png)
+![manage_dep_mob](static/images/wireframes/manage_dep_mob.png)
+![add_dep_mob](static/images/wireframes/add_dep_mob.png)
+
+### Design for desktop device: ###
+
+![all_tasks_landingp_desk](static/images/wireframes/all_tasks_landingp_desk.png)
+![sign_up_desk](static/images/wireframes/sign_up_desk.png)
+![sign_in_desk](static/images/wireframes/sign_in_desk.png)
+![create_task_desk](static/images/wireframes/create_task_desk.png)
+![manage_dep_desk](static/images/wireframes/manage_dep_desk.png)
+![add_dep_desk](static/images/wireframes/add_dep_desk.png)
+
+### Design ###
+

@@ -4,7 +4,7 @@
 
 /* All pages */
 .base-bgcolor {
-    background-color: #d7ccc8;
+    background-color: #a1887f;
 }
 
 .base-bgcolor2 {
@@ -16,7 +16,7 @@
 }
 
 .base-color2 {
-    color: #d7ccc8;
+    color: #a1887f;
 }
 
 .sidenav li>a {
@@ -43,7 +43,7 @@ body {
 
 /* Buttons hover */
 .btn:hover, .btn-large:hover, .btn-small:hover {
-    background-color: #a1887f;
+    background-color: #d7ccc8;
 }
 
 .collapsible-header .col strong {

@@ -41,8 +41,26 @@ def search():
     tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
     return render_template("tasks/tasks.html", tasks=tasks)
 
+# ----- Filter Search, Due-Date -----
+# Credit to Rebecca Tracey:
+# https://github.com/rebeccatraceyt/bake-it-til-you-make-it/blob/master/app.py
+
+
+@app.route("/due_date_filter/<id>")
+def due_date_filter(id):
+    """
+    Filter tasks by Due Date
+    """
+    tasks = list(mongo.db.tasks.find({"due_date": id}))
+    return render_template("tasks/tasks.html",
+                           tasks=tasks,
+                           title="Tasks filtered by most urgent")
+
 
 # ----- Sign Up Function -----
+# Credit to Rebecca Tracey:
+# https://github.com/rebeccatraceyt/bake-it-til-you-make-it/blob/master/app.py
+
 
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():

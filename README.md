@@ -37,6 +37,26 @@ This is the third of four Milestone Projects the developer needs to complite, to
 
 The main requirements on this project was to build a full-stack website, where users could manage a common dataset, using **HTML5**, **CSS3**, **JavaScript**, **Python**, **Flask** and **MongoDB**.
 
+### User Stories ###
+
+* As a general user I want to:
+
+    * Se a simple application with calm colors without a lot of distractions
+    * Se the workload accross the departments
+    * See who made the task 
+    * Have the opportunity to Sign Up for access to more features
+
+* As a logged in user, in addition to the general above, I want to: 
+
+    * Be able to create tasks on the department of my own choice
+    * Edit and delete tasks created by me
+
+* As an Admin user I want to:
+
+    * Create a new department
+    * Edit department
+    * Delete department
+
 ### User Goals ###
 
 * A simple Task Manager to keep track of the workload with the easy-to-use management system, using the basic **CRUD** functions: Create, Read, Update and Delete. 
@@ -46,14 +66,13 @@ The main requirements on this project was to build a full-stack website, where u
     * Update Tasks
     * Delete Tasks
 
-### User Stories ###
+### Site Owner Goals ###
 
-As a user I want to:
-* Se a simple application with calm colors without a lot of distractions
-* Se the workload accross the departments
-* Be able to create tasks on the department of my own choice
-* See who made the task 
-* Edit and delete tasks created by my self
+* Develop a tool to make the workdays more easy and transparent
+
+ * The user feels included
+ * The user have the opportunity to update on workload
+ * The user gets a simpler and more clear workday
 
 ### Development Planes ###
 

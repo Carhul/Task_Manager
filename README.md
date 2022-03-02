@@ -199,10 +199,22 @@ Features that will be implemented in the future:
 * Anonnymous suggestion function
 
 ### Technologies ###
+
 ### Languages ###
+
+* [HTML5](https://en.wikipedia.org/wiki/HTML5)
+* [CSS3](https://en.wikipedia.org/wiki/CSS)
+* [JavaScript](https://no.wikipedia.org/wiki/JavaScript)
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
 ### Tools ###
 ### Libraries ###
+
+* [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework))
+
 ### Database Management ###
+
+* [MongoDB](https://en.wikipedia.org/wiki/MongoDB)
 
 ### Testing ###
 

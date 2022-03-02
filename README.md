@@ -101,3 +101,19 @@ Divided into three categories, the website will focus on the following target au
     * Structured
     * Work culture
 
+### Scope ###
+
+#### User Requirements And Expectations ####
+
+* Content that is visually appealing with calm colors
+* Content is well structured
+* Easy to navigate the application using the respective buttons  
+* Easy to understand how to use the application
+* Easy to read typography
+* Operational link to **GitHub**, **Slack** and **LinkedIn** that opens in a new tab  
+* Opportunity to Sign In
+* Opportunity to create, edit and delete own tasks
+* Tasks have a descreption and due date
+* See all tasks accross departments
+* Admin user has the opportunity to mange the departments
+

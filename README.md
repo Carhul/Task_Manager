@@ -142,3 +142,25 @@ Wireframes was made in [Balsamiq](https://balsamiq.com/). As in previous project
 
 ### Design ###
 
+The design of this application has been created based on a "keep it simple" mindset. It has a lot of different user personalities, and it is not an application to hang out on. The users is at work, and it is a quick in and out application. Calm colors without distractions and unnecessary content. 
+
+When entering the application you immediately see all tasks, the user does not have to sign up / in unless they want to create, edit or delete a task. 
+
+* Fonts
+
+INSERT FONT HERE WHEN READY 
+
+* Icons
+
+[Fontawsome](https://fontawesome.com/) provided all the icons used in the application.
+
+* Colours
+
+All the colours where picked to ensure a calm and harmonious impression. 
+
+    * Navbar, Footer and Containers: 
+    * Buttons :
+    * Text: 
+    
+Color Sheme from [Coolors](https://coolors.co/)
+!

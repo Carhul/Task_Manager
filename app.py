@@ -118,7 +118,8 @@ def sign_in():
             if check_password_hash(existing_user["password"],
                                    request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Hello, {}! Have a good day at the office!".format(request.form.get("username")))
+                flash("Hello, {}! Have a good day at the office!".format(
+                    request.form.get("username")))
                 return redirect(url_for("get_tasks", username=session["user"]))
             else:
                 # Invalid password match

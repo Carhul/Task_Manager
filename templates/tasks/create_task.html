@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-folder-open prefix base-color"></i>
-                    <select id="department_name" name="department_name" class="validate" required>
+                    <select id="department_name" name="department_name" class="validate base-color" required>
                         <option value="" disabled selected>Choose Department</option>
                         {% for department in departments %}
                             <option value="{{ department.department_name}}">{{ department.department_name}}</option>
@@ -63,7 +63,7 @@
                     <a href="{{ url_for('get_tasks') }}" class="btn-large base-color2 base-bgcolor2">
                         Cancel <i class="fa-solid fa-circle-xmark"></i>
                     </a>
-                    <button type="submit" class="btn-large base-color base-bgcolor">
+                    <button type="submit" class="btn-large base-color base-bgcolor3">
                         Create Task <i class="fa-solid fa-square-plus right"></i>
                     </button>
                 </div>

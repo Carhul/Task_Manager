@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="brown-text text-lighten-2 center-align">Sign In</h3>
+    <h3 class="base-color center-align">Sign In</h3>
 
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('sign_in') }}">
-            <div class="card-panel brown lighten-4">
+            <div class="card-panel base-bgcolor">
                 <!-- Username -->
                 <div class="row">
 					<div class="input-field col s12">
-						<i class="fa-solid fa-user prefix white-text"></i>
+						<i class="fa-solid fa-user prefix base-color"></i>
 						<input id="username" name="username" type="text" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
 						<label for="username">Username</label>
@@ -18,7 +18,7 @@
                 <!-- Passowrd -->
                 <div class="row">
                     <div class="input-field col s12">
-						<i class="fa-solid fa-user-lock prefix white-text"></i>
+						<i class="fa-solid fa-user-lock prefix base-color"></i>
                         <input id="password" name="password" type="password" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="password">Password</label>
@@ -26,8 +26,8 @@
                 </div>
                 <!-- Sign In -->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large brown lighten-2">
-                        Log In <i class="fa-solid fa-right-to-bracket"></i>
+                    <button type="submit" class="col s12 btn-large base-bgcolor3">
+                        Sign In <i class="fa-solid fa-right-to-bracket"></i>
                     </button>
                 </div>
             </div>
@@ -36,9 +36,9 @@
 
     <div class="row">
         <div class="col s12">
-            <p class="center-align">
+            <p class="center-align base-color">
                 New Here?
-                <a href="{{ url_for('sign_up') }}" class="brown-text text-darken-10">Sign Up</a>
+                <a href="{{ url_for('sign_up') }}" class="base-color"><i class="fa-solid fa-arrow-right"></i> Sign Up</a>
             </p>
         </div>
     </div>

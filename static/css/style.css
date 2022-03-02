@@ -4,20 +4,30 @@
 
 /* All pages */
 
+/* Background Color Of Header & Footer */
 .base-bgcolor {
     background-color: #bcaaa4;
 }
 
-.base-bgcolor2 {
-    background-color: white;
+/* Text Color Of Header & Footer */
+.base-color {
+    color: #efebe9;
 }
 
-.base-color {
-    color: white;
+.base-bgcolor2 {
+    background-color: #efebe9;
 }
 
 .base-color2 {
     color: #a1887f;
+}
+
+.base-bgcolor3 {
+    background-color: #a1887f;
+}
+
+.base-color3 {
+    color: #6d4c41;
 }
 
 .sidenav li>a {

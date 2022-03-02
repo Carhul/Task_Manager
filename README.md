@@ -11,6 +11,7 @@ _A simple tool to help you get an overview of the workload_
     * [Introduction & Project Goals](#introduction--project-goals)
     * [User Stories](#user-stories)
     * [Development Planes](#development-planes)
+    * [Skeleton](#skeleton)
     * [Design](#design)
     * [Features](#features)
 * [Technologies](#technologies)
@@ -116,4 +117,10 @@ Divided into three categories, the website will focus on the following target au
 * Tasks have a descreption and due date
 * See all tasks accross departments
 * Admin user has the opportunity to mange the departments
+
+### Skeleton ###
+
+Wireframes was made in [Balsamiq](https://balsamiq.com/). As in previous projects feedback on using [Figma](https://www.figma.com/), was that Balsamiq was a better choice.
+
+### Design for mobile device: ###
 

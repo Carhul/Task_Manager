@@ -3,8 +3,9 @@
 }
 
 /* All pages */
+
 .base-bgcolor {
-    background-color: #a1887f;
+    background-color: #bcaaa4;
 }
 
 .base-bgcolor2 {
@@ -21,6 +22,10 @@
 
 .sidenav li>a {
     color: white;
+}
+
+.collapsible {
+    background-color: #a1887f;
 }
 
 /* Background Image */
@@ -118,7 +123,6 @@ nav .brand-logo {
 }
 
 .page-footer {
-    background-color: #d7ccc8;
     bottom: 0;
     position: fixed;
     width: 100%;

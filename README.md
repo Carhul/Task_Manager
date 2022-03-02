@@ -25,3 +25,13 @@ _A simple tool to help you get an overview of the workload_
 * [Acknowledgements](#acknowledgements)
 ---
 
+### Introduction & Project Goals ###
+
+Task Manager is a simple way to keep a comprehensive overview of the workload. It`s divided into different departments, but all departments can see all tasks on every department and also create a new task on the appropriate department.
+
+The Project Goal is to make the days at the office more easy and transparent across the different departments. 
+
+This is the third of four Milestone Projects the student needs to complite, to achieve the Diploma in Software Development.
+
+The main requirements on this project was to build a full-stack website, where users could manage a common dataset, using HTML5, CSS3, JavaScript, Python, Flask and MongoDB.
+

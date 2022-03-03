@@ -278,6 +278,10 @@ Full-featured template engine for Python, used to extend from `base.html`.
 ### Database Management ###
 
 * [MongoDB](https://en.wikipedia.org/wiki/MongoDB)
+MongoDB was the chosen NoSQL database for this project.
+
+* [MongoDB Atlas](https://www.mongodb.com/atlas/database)
+MongoDB Atlas used to host the database in the cloud.
 
 ### Testing ###
 

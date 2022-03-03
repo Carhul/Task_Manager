@@ -13,7 +13,7 @@ html {
 
 /* Text Color Of Header & Footer */
 .base-color {
-    color: #efebe9;
+    color: white;
 }
 
 /* Reset, Edit and Delete buttons */
@@ -76,7 +76,7 @@ switch label input[type=checkbox]:checked+.lever:after {
 }
 
 .btn, .btn-large {
-    margin: 5px;
+    margin: 3px;
 }
 
 /* Buttons hover */

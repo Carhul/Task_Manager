@@ -97,7 +97,7 @@ def sign_in():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            """ Ensure hashed password matches user input """
+            # Ensure hashed password matches user input
             if check_password_hash(existing_user["password"],
                                    request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
@@ -121,17 +121,22 @@ def sign_in():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    """ Grab the session user's username from db """
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
+    """ Profile Page """
     if session["user"]:
-        return render_template("users/profile.html", username=username)
+        # Grab the session user's username from db
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        # Get the tasks for the user
+        get_tasks = list(mongo.db.tasks.find(
+            {"created_by": session["user"]}))
+        tasks = list(mongo.db.tasks.find())
 
-    return redirect(url_for("sign_in"))
-
+        return render_template(
+            "users/profile.html", username=username,
+            get_tasks=get_tasks, tasks=tasks)
 
 # ----- Log Out -----
+
 
 @app.route("/logout")
 def logout():

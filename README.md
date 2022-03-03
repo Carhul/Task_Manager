@@ -157,6 +157,8 @@ When entering the application you immediately see all tasks, the user does not h
 [Google Fonts](https://fonts.google.com/specimen/Roboto): Roboto, sans-serif.
 This Font is used because it is a clean and simple Font. 
 
+![roboto_sansserif](static/images/wireframes/roboto_sansserif.png)
+
 * Icons
 
 [Fontawsome](https://fontawesome.com/) provided all the icons used in the application.

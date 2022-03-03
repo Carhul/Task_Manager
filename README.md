@@ -142,7 +142,7 @@ Wireframes was made in [Balsamiq](https://balsamiq.com/). As in previous project
 
 ### Changes from wireframes to live site ###
 
-First it was thought that each page would have different background image, but the developer thought the coffee-bean background was great on all pages to keep it consistent.
+First it was thought that each page would have different background image, but the developer thought the coffee-bean background was great on all pages to keep it consistent. Besides from that it turned up almost like the wireframes.
 
 ### Design ###
 

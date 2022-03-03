@@ -140,6 +140,10 @@ Wireframes was made in [Balsamiq](https://balsamiq.com/). As in previous project
 ![manage_dep_desk](static/images/wireframes/manage_dep_desk.png)
 ![add_dep_desk](static/images/wireframes/add_dep_desk.png)
 
+### Changes from wireframes to live site ###
+
+First it was thought that each page would have different background image, but the developer thought the coffee-bean background was great on all pages to keep it consistent.
+
 ### Design ###
 
 The design of this application has been created based on a "keep it simple" mindset. It has a lot of different user personalities, and it is not an application to hang out on. The users is at work, and it is a quick in and out application. Calm colors without distractions and unnecessary content. 
@@ -160,9 +164,11 @@ INSERT FONT HERE WHEN READY
 
 All the colours where picked to ensure a calm and harmonious impression. 
 
-    * Navbar, Footer and Containers: 
-    * Buttons :
-    * Text: 
+    * Navbar, Footer and Containers: Silver Pink, #bcaaa4
+    * Buttons : Isabeline, #efebe9 and Cinereous, #a1887f
+    * Text and Icons: White, #fff and Isabeline, #efebe9
+    * Collapsible and dropdown: Cinereous, #a1887f
+    * Hover: Pale Silver, d7ccc8
     
 Color Sheme from [Coolors](https://coolors.co/)
 ![color_sheme](static/images/wireframes/color_sheme.png)

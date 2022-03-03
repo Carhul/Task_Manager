@@ -1,5 +1,4 @@
-# ----- Libary Imports -----
-
+""" Import OS """
 import os
 from flask import (
     Flask, flash, render_template,
@@ -11,7 +10,6 @@ if os.path.exists("env.py"):
     import env
 
 
-# ----- Flask App Configuration -----
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -19,7 +17,6 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
-
 
 
 @app.route("/")
@@ -30,22 +27,20 @@ def get_tasks():
     return render_template("tasks/tasks.html", tasks=tasks)
 
 
-# ----- Search function -----
-
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    """ Search tasks """
+    """Search tasks"""
     query = request.form.get("query")
     tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
     return render_template("tasks/tasks.html", tasks=tasks)
 
 
-# ----- Sign Up Function -----
-# Credit to Rebecca Tracey:
-# https://github.com/rebeccatraceyt/bake-it-til-you-make-it/blob/master/app.py
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
     """
+    Credit:https://github.com/rebeccatraceyt/
+    bake-it-til-you-make-it/blob/master/app.py
+
     Allows user to sign up for an account,
     rendering sign_up.html.
     Prevention of username duplicates included.
@@ -85,8 +80,6 @@ def sign_up():
                                 username=session["user"]))
 
 
-# ----- Sign In Page -----
-
 @app.route("/sign_in", methods=["GET", "POST"])
 def sign_in():
     """Sign-In Page"""
@@ -117,9 +110,7 @@ def sign_in():
     return render_template("users/sign_in.html")
 
 
-# ----- Profile Page Functionality -----
-
-@app.route("/profile/<username>", methods=["GET", "POST"])
+@app.route("/profile/<username>", methods=["GET"])
 def profile(username):
     """ Profile Page """
     if session["user"]:
@@ -134,8 +125,6 @@ def profile(username):
             "users/profile.html", username=username,
             user_tasks=user_tasks)
 
-# ----- Log Out -----
-
 
 @app.route("/logout")
 def logout():
@@ -144,8 +133,6 @@ def logout():
     session.pop("user")
     return redirect(url_for("sign_in"))
 
-
-# ----- Create Task -----
 
 @app.route("/create_task", methods=["GET", "POST"])
 def create_task():
@@ -167,8 +154,6 @@ def create_task():
     departments = mongo.db.departments.find().sort("department_name", 1)
     return render_template("tasks/create_task.html", departments=departments)
 
-
-# ----- Edit Task -----
 
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
 def edit_task(task_id):
@@ -192,8 +177,6 @@ def edit_task(task_id):
                            departments=departments)
 
 
-# ----- Delete Task -----
-
 @app.route("/delete_task/<task_id>")
 def delete_task(task_id):
     """ Delete task """
@@ -202,8 +185,6 @@ def delete_task(task_id):
     return redirect(url_for("get_tasks"))
 
 
-# ----- Get Departments -----
-
 @app.route("/get_departments")
 def get_departments():
     """ Get department """
@@ -211,8 +192,6 @@ def get_departments():
     return render_template("departments/departments.html",
                            departments=departments)
 
-
-# ----- Add Department -----
 
 @app.route("/add_department", methods=["GET", "POST"])
 def add_department():
@@ -227,8 +206,6 @@ def add_department():
 
     return render_template("departments/add_department.html")
 
-
-# ----- Edit Department -----
 
 @app.route("/edit_department/<department_id>", methods=["GET", "POST"])
 def edit_department(department_id):
@@ -248,8 +225,6 @@ def edit_department(department_id):
                            department=department)
 
 
-# ----- Delete Department -----
-
 @app.route("/delete_department/<department_id>")
 def delete_department(department_id):
     """ Delete category """
@@ -258,13 +233,13 @@ def delete_department(department_id):
     return redirect(url_for("get_departments"))
 
 
-# ----- Error Handling -----
-# Credit to Rebecca Tracey:
-# https://github.com/rebeccatraceyt/bake-it-til-you-make-it/blob/master/app.py
 @app.errorhandler(404)
 def page_not_found():
     """
     404 error handler
+
+    Credit:https://github.com/rebeccatraceyt/
+    bake-it-til-you-make-it/blob/master/app.py
     """
     return render_template("error_handlers/404.html"), 404
 
@@ -273,6 +248,9 @@ def page_not_found():
 def internal_server_error():
     """
     500 error handler
+
+    Credit:https://github.com/rebeccatraceyt/
+    bake-it-til-you-make-it/blob/master/app.py
     """
     return render_template("error_handlers//500.html"), 500
 

@@ -25,20 +25,20 @@
       {% for task in tasks %}
       <li>
           <div class="collapsible-header base-color base-bgcolor">
-              <div class="col s3">
+              <div class="col s12">
                 <i class="fa-solid fa-caret-down"></i>
                 {% if session.user|lower == task.created_by|lower %}
                 <a href="{{ url_for('delete_task', task_id=task._id) }}" class="btn-small base-color base-bgcolor3">Done</a>
                 <a href="{{ url_for('edit_task', task_id=task._id) }}" class="btn-small base-color2 base-bgcolor2">Edit</a>
                 {% endif %}
-              </div>
-              <div class="col s9">
+              <div>
                 <strong>{{ task.task_name }}</strong> : {{ task.due_date }}
               {% if task.is_urgent == "on" %}
                   <i class="fa-solid fa-circle-exclamation base-color tooltipped"
                       data-position="right" data-tooltip="URGENT!"></i>
               {% endif %}
               </div>
+            </div>
           </div>
           <div class="collapsible-body">
               <strong class="base-color" >{{ task.department_name }}</strong>

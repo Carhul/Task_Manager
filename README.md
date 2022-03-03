@@ -217,9 +217,63 @@ Features that will be implemented in the future:
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 ### Tools ###
+
+* [Git](https://git-scm.com/)  
+Git was used for version control by utilizing the GitPod terminal to commit to Git and push to Heroku and GitHub.
+
+* [GitHub](https://github.com/)
+GitHub was used to store the project after pushing from Gitpod.
+
+* [Heroku](https://id.heroku.com/)
+Heroku was used to deploy the website.
+
+* [Balsamiq](https://balsamiq.com/)
+Balsamiq was used to create wireframes before starting on the project.
+
+* [Am I Responsive?](http://ami.responsivedesign.is/)
+Am I Responsive? Was used througout the building of the project to make sure the it was responsive, and also for the Mockup.
+
+* [Font Awsome](https://fontawesome.com/)
+Font Awsome was used to get all the icons on the website.
+
+* [Unsplash](https://unsplash.com/)
+Unsplash was used to get the background image and the error image for error pages. 
+
+* [Favicon](https://favicon.io/)
+Favicon was used to make the Favicon Image.
+
+
 ### Libraries ###
 
+* [Materialize](https://materializecss.com/)
+Materialize was used for responsivenes along with custom components.
+
+* [jquery](https://jquery.com/)
+jquery was used along with Materialize for installation of CSS components.
+
+* [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)
+Werkzeug is a comprehensive WSGI web application library
+
 * [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework))
+Flask was used as the web framework.
+
+* [ItsDangerous](https://palletsprojects.com/p/itsdangerous/)
+Its Dangerous allows data to safely be sent and received using Python secret keys.
+
+* [PyMongo](https://pymongo.readthedocs.io/en/stable/)
+Containing tools for working with MongoDB
+
+* [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/)
+Flask-PyMongo bridges Flask and PyMongo
+
+* [BSON](https://bsonspec.org/)
+This is a required dependency for MongoDB management system.
+
+* [DNSPython](https://www.dnspython.org/)
+Tookit for Python used for queries in this case.
+
+* [Jinja](https://palletsprojects.com/p/jinja/)
+Full-featured template engine for Python, used to extend from `base.html`.
 
 ### Database Management ###
 

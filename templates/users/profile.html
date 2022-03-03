@@ -12,4 +12,36 @@
         </div>
     </div>
 
+    {% if user_tasks|length > 0 %}
+    <ul class="collapsible">
+      {% for task in user_tasks %}
+      <li>
+          <div class="collapsible-header base-color base-bgcolor">
+              <div class="col s3">
+                <i class="fa-solid fa-caret-down"></i>
+                {% if session.user|lower == task.created_by|lower %}
+                <a href="{{ url_for('delete_task', task_id=task._id) }}" class="btn-small base-color base-bgcolor3">Done</a>
+                <a href="{{ url_for('edit_task', task_id=task._id) }}" class="btn-small base-color2 base-bgcolor2">Edit</a>
+                {% endif %}
+              </div>
+              <div class="col s9">
+                <strong>{{ task.task_name }}</strong> : {{ task.due_date }}
+              {% if task.is_urgent == "on" %}
+                  <i class="fa-solid fa-circle-exclamation base-color tooltipped"
+                      data-position="right" data-tooltip="URGENT!"></i>
+              {% endif %}
+              </div>
+          </div>
+          <div class="collapsible-body">
+              <strong class="base-color" >{{ task.department_name }}</strong>
+              <p class="base-color" >{{ task.task_description }}</p>
+              <p class="base-color" ><em>by: {{ task.created_by }}</em></p>
+          </div>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <h3 class="base-color center-align">No results found</h3>
+    {% endif %}
+
 {% endblock %}

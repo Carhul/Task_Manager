@@ -12,7 +12,6 @@ if os.path.exists("env.py"):
 
 
 # ----- Flask App Configuration -----
-
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -22,12 +21,11 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# ----- Get All tasks / Homepage -----
 
 @app.route("/")
 @app.route("/get_tasks")
 def get_tasks():
-    """ Get tasks from taskmanager_database """
+    """Get tasks from taskmanager_database."""
     tasks = list(mongo.db.tasks.find())
     return render_template("tasks/tasks.html", tasks=tasks)
 
@@ -65,12 +63,12 @@ def sign_up():
                 return redirect(url_for("sign_up"))
 
             # Send collected data to user collection
-            sign_up = {
+            new_user = {
                 "username": request.form.get("username").lower(),
                 "password": generate_password_hash(
                     request.form.get("password"))
             }
-            mongo.db.users.insert_one(sign_up)
+            mongo.db.users.insert_one(new_user)
 
             # Welcome user
             session["user"] = request.form.get("username").lower()
@@ -91,6 +89,7 @@ def sign_up():
 
 @app.route("/sign_in", methods=["GET", "POST"])
 def sign_in():
+    """Sign-In Page"""
     if request.method == "POST":
         # Check if username exists in db
         existing_user = mongo.db.users.find_one(
@@ -101,8 +100,9 @@ def sign_in():
             if check_password_hash(existing_user["password"],
                                    request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Hello, {}! Have a good day at the office!".format(
-                    request.form.get("username")))
+                flash(
+                    f"Hello, {request.form.get('username')}! "
+                    f"Have a good day at the office!")
                 return redirect(url_for("get_tasks", username=session["user"]))
             else:
                 # Invalid password match
@@ -127,13 +127,12 @@ def profile(username):
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
         # Get the tasks for the user
-        get_tasks = list(mongo.db.tasks.find(
+        user_tasks = list(mongo.db.tasks.find(
             {"created_by": session["user"]}))
-        tasks = list(mongo.db.tasks.find())
 
         return render_template(
             "users/profile.html", username=username,
-            get_tasks=get_tasks, tasks=tasks)
+            user_tasks=user_tasks)
 
 # ----- Log Out -----
 

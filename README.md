@@ -154,7 +154,8 @@ When entering the application you immediately see all tasks, the user does not h
 
 * Fonts
 
-INSERT FONT HERE WHEN READY 
+[Google Fonts](https://fonts.google.com/specimen/Roboto): Roboto, sans-serif.
+This Font is used because it is a clean and simple Font. 
 
 * Icons
 

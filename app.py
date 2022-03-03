@@ -4,6 +4,7 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from functools import wraps
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -17,6 +18,23 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
+
+def sign_in_required(f)
+    """
+    User sign_in_required decorater adapted from:
+    https://flask.palletsprojects.com/en/2.0.x/patterns/
+    viewdecorators/#login-required-decorator
+    
+    Recommended by sandeep_mentor
+    """
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if "user" not in session:
+            flash("You need to Sign In to see this page!")
+            return redirect(url_for("sign_in"))
+        return f(*args, **kwargs)
+    return decorated_function
 
 
 @app.route("/")

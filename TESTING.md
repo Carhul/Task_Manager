@@ -43,9 +43,32 @@ Back to [README.md](README.md) file.
 
   * Edit and delete tasks created by me
 
-    The user can do this from the main page, All Tasks - or in the profile page. In the profile page is only the tasks created by the logged in user visible. This would be the preferred method in case where there is a lot of tasks.
+    The user can do this from the main page, All Tasks - or in the profile page. In the profile page, is only the tasks created by the logged in user visible. This would be the preferred method in case there is a lot of tasks.
+
+  * See my created task on my profile page
+
+    The user can easily see the created tasks by entering the profile page. 
+
+* As an Admin user, in addition to the above, I want to: 
+
+  * Create a new department
+
+    Admin can create a new department by pushing the Manage Departments, on navbar.
+
+  * Edit department
+
+    Admin can easily edit department when on the Manage Department page, by pushing EDIT.
+
+  * Delete department
+
+    Admin can delete department when on the Manage Department page, by pushing DELETE.
 
 ### Manual Testing ###
+
+* All Tasks Page
+
+  
+
 
 ### Automated Testing ###
 

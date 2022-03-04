@@ -147,7 +147,13 @@ Back to [README.md](README.md) file.
 
   ![500](static/images/testing/500.png)
 
-  
+
+* User Testing
+
+  I asked my family and friends to test the application, and the feedback was good. The only thing that they missed, was to have an warning before delete button. I agree, that should have been done, and will be in the future.
+
+  Else they liked the background image and the colors. Also the simplicity was appreciated.
+
 ### Automated Testing ###
 
 ### Bugs ###

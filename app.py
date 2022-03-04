@@ -1,4 +1,8 @@
-""" Import OS """
+"""
+    A lot of the code is adapted and adjusted
+    from the Code Institute learning material,
+    especially the Task Manager Flask App mini Project
+"""
 import os
 from functools import wraps
 from flask import (

@@ -64,14 +64,13 @@ input[type=text] {
     margin-left: 46px;
 }
 
-/* Create Task - Lever:after */
-switch label input[type=checkbox]:checked+.lever:after {
-    background-color: white;
-}
-
 .switch label input[type=checkbox]:checked+.lever {
     background-color: #efebe9;
     color: white;
+}
+
+.select-wrapper .caret {
+    fill: white;
 }
 
 /* Provide space between buttons */

@@ -10,6 +10,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
+DEBUG_MODE = os.environ.get("DEBUG", False)
 
 app = Flask(__name__)
 
@@ -20,9 +21,9 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-def sign_in_required(f):
+def login_required(f):
     """
-    User sign_in_required decorater adapted from:
+    User login_required decorater adapted from:
     https://flask.palletsprojects.com/en/2.0.x/patterns/
     viewdecorators/#login-required-decorator
 
@@ -47,7 +48,7 @@ def get_tasks():
     return render_template("tasks/tasks.html", tasks=tasks)
 
 
-@app.route("/search", methods=["GET", "POST"])
+@app.route("/search", methods=["GET"])
 def search():
     """Search tasks"""
     query = request.form.get("query")
@@ -106,26 +107,20 @@ def sign_in():
             {"username": request.form.get("username").lower()}
         )
 
-        if existing_user:
-            # Ensure hashed password matches user input
-            if check_password_hash(
-                existing_user["password"], request.form.get("password")
-            ):
-                session["user"] = request.form.get("username").lower()
-                flash(
-                    f"Hello, {request.form.get('username')}! "
-                    f"Have a good day at the office!"
-                )
-                return redirect(url_for("get_tasks", username=session["user"]))
-            else:
-                # Invalid password match
-                flash("Incorrect Username and/or Password")
-                return redirect(url_for("sign_in"))
-
-        else:
-            # Username doesn't exist
-            flash("Incorrect Username and/or Password")
-            return redirect(url_for("sign_in"))
+        # Ensure hashed password matches user input
+        if existing_user and check_password_hash(
+            existing_user["password"], request.form.get("password")
+        ):
+            session["user"] = request.form.get("username").lower()
+            flash(
+                f"Hello, {request.form.get('username')}! "
+                f"Have a good day at the office!"
+            )
+            return redirect(url_for("get_tasks", username=session["user"]))
+            
+        # Username doesn't exist
+        flash("Incorrect Username and/or Password")
+        return redirect(url_for("sign_in"))
 
     return render_template("users/sign_in.html")
 
@@ -153,6 +148,7 @@ def logout():
 
 
 @app.route("/create_task", methods=["GET", "POST"])
+@login_required
 def create_task():
     """Create task"""
     if request.method == "POST":
@@ -176,20 +172,23 @@ def create_task():
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
 def edit_task(task_id):
     """Edit task"""
-    if request.method == "POST":
-        is_urgent = "on" if request.form.get("is_urgent") else "off"
-        submit = {
-            "department_name": request.form.get("department_name"),
-            "task_name": request.form.get("task_name"),
-            "task_description": request.form.get("task_description"),
-            "is_urgent": is_urgent,
-            "due_date": request.form.get("due_date"),
-            "created_by": session["user"],
-        }
-        mongo.db.tasks.replace_one({"_id": ObjectId(task_id)}, submit)
-        flash("Task Successfully Updated")
-
     task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    if request.method == "POST":
+        if task["created_by"] == session["user"]:
+            is_urgent = "on" if request.form.get("is_urgent") else "off"
+            submit = {
+                "department_name": request.form.get("department_name"),
+                "task_name": request.form.get("task_name"),
+                "task_description": request.form.get("task_description"),
+                "is_urgent": is_urgent,
+                "due_date": request.form.get("due_date"),
+                "created_by": session["user"],
+            }
+            mongo.db.tasks.replace_one({"_id": ObjectId(task_id)}, submit)
+            flash("Task Successfully Updated")
+        else:
+            return redirect(url_for("get_tasks"))
+
     departments = mongo.db.departments.find().sort("department_name", 1)
     return render_template("tasks/edit_task.html", task=task, departments=departments)
 
@@ -206,7 +205,9 @@ def delete_task(task_id):
 def get_departments():
     """Get department"""
     departments = list(mongo.db.departments.find().sort("department_name", 1))
-    return render_template("departments/departments.html", departments=departments)
+    return render_template(
+        "departments/departments.html", departments=departments
+    )
 
 
 @app.route("/add_department", methods=["GET", "POST"])
@@ -243,7 +244,7 @@ def delete_department(department_id):
 
 
 @app.errorhandler(404)
-def page_not_found():
+def page_not_found(e):
     """
     404 error handler
 
@@ -254,7 +255,7 @@ def page_not_found():
 
 
 @app.errorhandler(500)
-def internal_server_error():
+def internal_server_error(e):
     """
     500 error handler
 
@@ -265,4 +266,6 @@ def internal_server_error():
 
 
 if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"), port=int(os.environ.get("PORT")), debug=True)
+    app.run(
+        host=os.environ.get("IP"), port=int(os.environ.get("PORT")), debug=DEBUG_MODE
+    )

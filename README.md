@@ -3,7 +3,7 @@ _A simple tool to help you get an overview of the workload_
 
 ![mockup](static/images/wireframes/mockup.png)
 
-[View the live site here](#)
+View the live site [here](#).
 
 ## Table of contents ##
 
@@ -51,8 +51,9 @@ The main requirements on this project was to build a full-stack website, where u
 
     * Be able to create tasks on the department of my own choice
     * Edit and delete tasks created by me
+    * See my created tasks on my profile page
 
-* As an Admin user I want to:
+* As an Admin user, in addition to the above, I want to:
 
     * Create a new department
     * Edit department
@@ -142,7 +143,7 @@ Wireframes was made in [Balsamiq](https://balsamiq.com/). As in previous project
 
 ### Changes from wireframes to live site ###
 
-First it was thought that each page would have different background image, but the developer thought the coffee-bean background was great on all pages to keep it consistent. Besides from that it turned up almost like the wireframes.
+First it was thought that each page would have different background image, but the developer thought the coffee-bean background was great on all pages to keep it consistent. The developer also desided to make a profile page, so that the signed in user have the opportunity to see only the tasks created by them.
 
 ### Design ###
 
@@ -178,7 +179,7 @@ Color Sheme from [Coolors](https://coolors.co/)
 
 ### Features ###
 
-The web application has a responsive layout with a reverse mindset relative to the mobile-first way of thinking. As it will be used at the office, and desktop screen.
+The web application has a responsive layout with a reverse mindset relative to the mobile-first way of thinking, as it will be used at the office, and desktop screen.
 But of course it can also be used from a phone.
 
 Features that have been implemented:
@@ -188,6 +189,7 @@ Features that have been implemented:
 * Sign In
 * Create, edit and delete Tasks
 * Create, edit and delete Departments
+* Profile Page
 
 * Flash messages if username exists or wrong password 
 * Flash messages when logged in or out
@@ -202,9 +204,10 @@ Features that have been implemented:
 
 Features that will be implemented in the future:
 
-* Sort Taks by date
+* Sort Tasks by date
 * See how many tasks that been solved
-* Assign tasks to another user 
+* Assign tasks to another user
+* Warning when delete, and confirm button
 * Anonnymous suggestion function
 
 ### Technologies ###
@@ -218,72 +221,72 @@ Features that will be implemented in the future:
 
 ### Tools ###
 
-* [Git](https://git-scm.com/)  
+* [Git](https://git-scm.com/)   
 Git was used for version control by utilizing the GitPod terminal to commit to Git and push to Heroku and GitHub.
 
-* [GitHub](https://github.com/)
+* [GitHub](https://github.com/)   
 GitHub was used to store the project after pushing from Gitpod.
 
-* [Heroku](https://id.heroku.com/)
+* [Heroku](https://id.heroku.com/)  
 Heroku was used to deploy the website.
 
-* [Balsamiq](https://balsamiq.com/)
+* [Balsamiq](https://balsamiq.com/)  
 Balsamiq was used to create wireframes before starting on the project.
 
-* [Am I Responsive?](http://ami.responsivedesign.is/)
+* [Am I Responsive?](http://ami.responsivedesign.is/)   
 Am I Responsive? Was used througout the building of the project to make sure the it was responsive, and also for the Mockup.
 
-* [Font Awsome](https://fontawesome.com/)
+* [Font Awsome](https://fontawesome.com/)   
 Font Awsome was used to get all the icons on the website.
 
-* [Unsplash](https://unsplash.com/)
+* [Unsplash](https://unsplash.com/)  
 Unsplash was used to get the background image and the error image for error pages. 
 
-* [Favicon](https://favicon.io/)
+* [Favicon](https://favicon.io/)    
 Favicon was used to make the Favicon Image.
 
-* [Black](https://black.vercel.app/)
+* [Black](https://black.vercel.app/)    
 Black Playground, Python code formatter.
 
 
 ### Libraries ###
 
-* [Materialize](https://materializecss.com/)
+* [Materialize](https://materializecss.com/)    
 Materialize was used for responsivenes along with custom components.
 
-* [jquery](https://jquery.com/)
+* [jquery](https://jquery.com/)  
 jquery was used along with Materialize for installation of CSS components.
 
-* [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)
+* [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)    
 Werkzeug is a comprehensive WSGI web application library
 
-* [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework))
+* [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework))  
 Flask was used as the web framework.
 
-* [ItsDangerous](https://palletsprojects.com/p/itsdangerous/)
+* [ItsDangerous](https://palletsprojects.com/p/itsdangerous/)   
 Its Dangerous allows data to safely be sent and received using Python secret keys.
 
-* [PyMongo](https://pymongo.readthedocs.io/en/stable/)
+* [PyMongo](https://pymongo.readthedocs.io/en/stable/)   
 Containing tools for working with MongoDB
 
-* [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/)
+* [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/)   
 Flask-PyMongo bridges Flask and PyMongo
 
-* [BSON](https://bsonspec.org/)
+* [BSON](https://bsonspec.org/)  
 This is a required dependency for MongoDB management system.
 
-* [DNSPython](https://www.dnspython.org/)
+* [DNSPython](https://www.dnspython.org/)   
 Tookit for Python used for queries in this case.
 
-* [Jinja](https://palletsprojects.com/p/jinja/)
+* [Jinja](https://palletsprojects.com/p/jinja/)  
 Full-featured template engine for Python, used to extend from `base.html`.
 
 ### Database Management ###
 
-* [MongoDB](https://en.wikipedia.org/wiki/MongoDB)
+* [MongoDB](https://en.wikipedia.org/wiki/MongoDB)   
 MongoDB was the chosen NoSQL database for this project.
 
-* [MongoDB Atlas](https://www.mongodb.com/atlas/database)
+* [MongoDB Atlas](https://www.mongodb.com/atlas/database)   
 MongoDB Atlas used to host the database in the cloud.
 
 ### Testing ###

@@ -117,7 +117,7 @@ def sign_in():
                 f"Have a good day at the office!"
             )
             return redirect(url_for("get_tasks", username=session["user"]))
-            
+
         # Username doesn't exist
         flash("Incorrect Username and/or Password")
         return redirect(url_for("sign_in"))
@@ -194,6 +194,7 @@ def edit_task(task_id):
 
 
 @app.route("/delete_task/<task_id>")
+@login_required
 def delete_task(task_id):
     """Delete task"""
     mongo.db.tasks.delete_one({"_id": ObjectId(task_id)})
@@ -211,6 +212,7 @@ def get_departments():
 
 
 @app.route("/add_department", methods=["GET", "POST"])
+@login_required
 def add_department():
     """Add department"""
     if request.method == "POST":
@@ -223,6 +225,7 @@ def add_department():
 
 
 @app.route("/edit_department/<department_id>", methods=["GET", "POST"])
+@login_required
 def edit_department(department_id):
     """Edit department"""
     if request.method == "POST":
@@ -236,6 +239,7 @@ def edit_department(department_id):
 
 
 @app.route("/delete_department/<department_id>")
+@login_required
 def delete_department(department_id):
     """Delete category"""
     mongo.db.departments.delete_one({"_id": ObjectId(department_id)})

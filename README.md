@@ -248,6 +248,9 @@ Favicon was used to make the Favicon Image.
 * [Black](https://black.vercel.app/)    
 Black Playground, Python code formatter.
 
+* [jShint](https://jshint.com/)  
+Used to validate JavaScript code.
+
 
 ### Libraries ###
 
@@ -270,13 +273,10 @@ Its Dangerous allows data to safely be sent and received using Python secret key
 Containing tools for working with MongoDB
 
 * [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/)   
-Flask-PyMongo bridges Flask and PyMongo
+Flask-PyMongo bridges Flask and PyMongo.
 
 * [BSON](https://bsonspec.org/)  
 This is a required dependency for MongoDB management system.
-
-* [DNSPython](https://www.dnspython.org/)   
-Tookit for Python used for queries in this case.
 
 * [Jinja](https://palletsprojects.com/p/jinja/)  
 Full-featured template engine for Python, used to extend from `base.html`.

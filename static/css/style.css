@@ -93,9 +93,14 @@ switch label input[type=checkbox]:checked+.lever:after {
     line-height: 42px;
 }
 
-/* Push Task Manager to the right */
 nav .brand-logo {
     padding-left: 10px;
+    display: unset;
+    position: unset;
+}
+
+.input-field.col .prefix ~ label, .input-field.col .prefix ~ .validate ~ label {
+    width: 100%;
 }
 
 /* Label Color for input fields */

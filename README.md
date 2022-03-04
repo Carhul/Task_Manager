@@ -321,6 +321,43 @@ Bugs are stored in the [TESTING.md](TESTING.md) file.
 ---
 ### Deployment ###
 
+The deployment of the web application was done using [GitPod](https://gitpod.io/), pushed to [GitHub](https://github.com/), and deployd on [Heroku](https://dashboard.heroku.com/) using the following instructions:
+
+1. Create a requirements.txt file using command *pip3 freeze --local > requirements.txt*
+2. Create a Procfile with the terminal command *echo web: python app.py > Procfile* and at this point checking the Procfile to make sure there is no stray line as this can cause issues when deploying to Heroku.
+3. The new requirements file and Procfile committed to GitHub.
+4. New app created in Heroku by clicking "New" and "Create New App" and giving it an original name and setting the region to closest to location.
+5. From Heroku dashboard click "Deploy" -> "Deployment Method" and select "GitHub"
+6. Search for GitHub repo and connect.
+7. In the dashboard click "Settings" -> "Reveal Config Vars"
+8. Set config vars:
+
+
+| Key          | Value             
+| ------------ |------------------ |
+| PORT         | 5000              |
+| IP           | 0.0.0.0           |
+| MONGO_URI    | USER_MONGODB_URI  |
+| MONGO_DBNAME | USER_MONGODB_NAME |
+| Secret_Key   | USER_SECRET_KEY   |
+
+---
+### How to contribute to the site ###
+
+1. Navigate to [GitHub](https://github.com/), log in
+2. Locate my [repo](https://github.com/Carhul/Task_Manager)
+3. On the right side of the screen, click Fork
+4. This creates a copy in your own repository to make changes in [GitPod](https://gitpod.io/)
+5. Once finished with changes, add commit and push to your own [GitHub](https://github.com/)
+6. Click Pull Requests and select "New Pull Request" button.
+
+---
+### How to run the project locally ###  
+
+1. Navigate to the [GitHub Repository](https://github.com/Carhul/Task_Manager)
+3. Click the green "GitPod" button in the top right corner of the repository. This will trigger a new gitPod workspace to be created from the code in github where you can work locally
+
+For more information on how to clone a repository, follow the instructions taken from [GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
 
 ---
 ### Credit ###
@@ -328,6 +365,10 @@ Bugs are stored in the [TESTING.md](TESTING.md) file.
 The developer has used previous README.md files from MS1 and MS2 as an inspiration. Also previos projects, and The Walkthroug Project with [Tim Nelson](https://www.youtube.com/watch?v=y72Dq3GRxhc).
 
 Mentor Sandeep Aggarwal was really helpful with the bug related to not get the search function to work. As well as tips and tricks along the way.
+
+Credit for deploy section: [Deployment to Heroku](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/ec081e87b3ea48ef986a7bd33f66e3b2/f5dff185642542618202d15605034feb/) from the Code Institute Learning videos.
+
+Also credit to [Suzybee](https://github.com/suzybee1987/the-book-nook-project/blob/main/README.md#deployment) for a more simple way to describe how to fork and run project locally than I had in my previos README.md files.
 
 Images
 

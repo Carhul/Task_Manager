@@ -304,4 +304,21 @@ Bugs are stored in the [TESTING.md](TESTING.md) file.
 
 ### Credit ###
 
+The developer has used previous README.md files from MS1 and MS2 as an inspiration. Also previos projects, and The Walkthroug Project with [Tim Nelson](https://www.youtube.com/watch?v=y72Dq3GRxhc).
+
+Mentor Sandeep Aggarwal was really helpful with the bug related to not get the search function to work. As well as tips and tricks along the way.
+
+Images
+
+Background image by: [Justus Menke](https://unsplash.com/@justusmenke?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/coffee-beans?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+Error image by: [Daniel Tatfjord](https://unsplash.com/@danieltafjord?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/broken-coffee-cup?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
 ### Acknowledgements ###
+
+* My Mentor - Sandeep. He is really amazing to speak with. He is easy to understand, solution oriented and always in a good mood. He is also good at giving feedback on what could have been done in a better way for another time. Really feel I learned a lot from our sessions. He is also good at motivation, and tell me what is good. Really appreciate him!
+
+* My kids and husband for their patience. The fact that they let me do this, I really appreciate it. My husband also participated in the user testing.
+
+* My friends and family for support, and participation in the user testing. 
+

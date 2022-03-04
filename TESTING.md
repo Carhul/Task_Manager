@@ -209,4 +209,11 @@ The solution: I first thought that changing to a list in app.py and {% if tasks|
 
   ![syntaxerror](static/images/testing/syntaxerror.png)
 
+* Terminal warnings
+
+  1. env imported but unused: Talked to mentor, and it should just be there as the env dont go into the GitHub, but it needs to be there to hold the secret_key.
+
+  2. Unused argument e, and argument name e and f was found throug Flask documentation. And therefore used even though it throws a warning
+
+  3. The line to long that was first an issue after using the Python formatter, Black. 
  

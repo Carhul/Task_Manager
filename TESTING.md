@@ -138,16 +138,32 @@ Back to [README.md](README.md) file.
   All three links directs the user to the correct site, on a new tab.
 
 * Error Pages
+  
+  404:
 
-  ![404]()
+  ![404](static/images/testing/404.png)
+
+  500:
+
   ![500](static/images/testing/500.png)
+
+  
 ### Automated Testing ###
 
 ### Bugs ###
+
+* Problem in the beginning of the project, the test task did not show, and I was unable to continue the project before it was solved, as the whole project was depending on the conection with MongoDB. After a day with different debugging, I found that the spelling in the code and in MongoDB was not the same..
+
+* TypeError: object of type 'Cursor' has no len().  
+
+![has_no_len](static/images/testing/has_no_len.png)
+
+The solution: I first thought that changing to a list in app.py and {% if tasks|length > 0 %} in the tasks.html would solve the problem, but then I got a new error. Then I realised that I had forgot to import text index to Python Shell.
 
 * SyntaxError
   
   An extreamly simple error, that I used to much time figuring out. I was obviously missing the colon..
 
   ![syntaxerror](static/images/testing/syntaxerror.png)
+
  

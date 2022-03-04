@@ -10,7 +10,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-DEBUG_MODE = os.environ.get("DEBUG", False)
+DEBUG_MODE = "DEBUG" in os.environ
 
 app = Flask(__name__)
 

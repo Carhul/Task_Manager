@@ -70,7 +70,7 @@ switch label input[type=checkbox]:checked+.lever:after {
 }
 
 .switch label input[type=checkbox]:checked+.lever {
-    background-color: white;
+    background-color: #efebe9;
     color: white;
 }
 

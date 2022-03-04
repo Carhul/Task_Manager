@@ -1,7 +1,7 @@
 # Task Manager #
 _A simple tool to help you get an overview of the workload_
 
-![mockup](#)
+![mockup](static/images/wireframes/mockup.png)
 
 [View the live site here](#)
 

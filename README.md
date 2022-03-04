@@ -242,6 +242,9 @@ Unsplash was used to get the background image and the error image for error page
 * [Favicon](https://favicon.io/)
 Favicon was used to make the Favicon Image.
 
+* [Black](https://black.vercel.app/)
+Black Playground, Python code formatter.
+
 
 ### Libraries ###
 

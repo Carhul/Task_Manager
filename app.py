@@ -26,14 +26,16 @@ def sign_in_required(f):
     https://flask.palletsprojects.com/en/2.0.x/patterns/
     viewdecorators/#login-required-decorator
 
-    Recommended by sandeep_mentor
+    Credit: sandeep_mentor
     """
+
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if "user" not in session:
             flash("You need to Sign In to see this page!")
             return redirect(url_for("sign_in"))
         return f(*args, **kwargs)
+
     return decorated_function
 
 
@@ -67,8 +69,8 @@ def sign_up():
         if request.method == "POST":
             # Check if username already exists
             existing_user = mongo.db.users.find_one(
-                {"username": request.form.get(
-                    "username").lower()})
+                {"username": request.form.get("username").lower()}
+            )
 
             # Prevents duplicates
             if existing_user:
@@ -78,24 +80,21 @@ def sign_up():
             # Send collected data to user collection
             new_user = {
                 "username": request.form.get("username").lower(),
-                "password": generate_password_hash(
-                    request.form.get("password"))
+                "password": generate_password_hash(request.form.get("password")),
             }
             mongo.db.users.insert_one(new_user)
 
             # Welcome user
             session["user"] = request.form.get("username").lower()
             flash("Welcome Onboard!")
-            return redirect(url_for("profile",
-                                    username=session["user"]))
+            return redirect(url_for("profile", username=session["user"]))
 
         return render_template("users/sign_up.html")
 
     else:
         # If user logged in
         flash("You already have an account")
-        return redirect(url_for("profile",
-                                username=session["user"]))
+        return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/sign_in", methods=["GET", "POST"])
@@ -104,16 +103,19 @@ def sign_in():
     if request.method == "POST":
         # Check if username exists in db
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+            {"username": request.form.get("username").lower()}
+        )
 
         if existing_user:
             # Ensure hashed password matches user input
-            if check_password_hash(existing_user["password"],
-                                   request.form.get("password")):
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")
+            ):
                 session["user"] = request.form.get("username").lower()
                 flash(
                     f"Hello, {request.form.get('username')}! "
-                    f"Have a good day at the office!")
+                    f"Have a good day at the office!"
+                )
                 return redirect(url_for("get_tasks", username=session["user"]))
             else:
                 # Invalid password match
@@ -130,23 +132,21 @@ def sign_in():
 
 @app.route("/profile/<username>", methods=["GET"])
 def profile(username):
-    """ Profile Page """
+    """Profile Page"""
     if session["user"]:
         # Grab the session user's username from db
-        username = mongo.db.users.find_one(
-            {"username": session["user"]})["username"]
+        username = mongo.db.users.find_one({"username": session["user"]})["username"]
         # Get the tasks for the user
-        user_tasks = list(mongo.db.tasks.find(
-            {"created_by": session["user"]}))
+        user_tasks = list(mongo.db.tasks.find({"created_by": session["user"]}))
 
         return render_template(
-            "users/profile.html", username=username,
-            user_tasks=user_tasks)
+            "users/profile.html", username=username, user_tasks=user_tasks
+        )
 
 
 @app.route("/logout")
 def logout():
-    """ Remove user from session cookie """
+    """Remove user from session cookie"""
     flash("You are now logged out! Have a nice day!")
     session.pop("user")
     return redirect(url_for("sign_in"))
@@ -154,7 +154,7 @@ def logout():
 
 @app.route("/create_task", methods=["GET", "POST"])
 def create_task():
-    """ Create task """
+    """Create task"""
     if request.method == "POST":
         is_urgent = "on" if request.form.get("is_urgent") else "off"
         task = {
@@ -163,7 +163,7 @@ def create_task():
             "task_description": request.form.get("task_description"),
             "is_urgent": is_urgent,
             "due_date": request.form.get("due_date"),
-            "created_by": session["user"]
+            "created_by": session["user"],
         }
         mongo.db.tasks.insert_one(task)
         flash("Task Successfully Created")
@@ -175,7 +175,7 @@ def create_task():
 
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
 def edit_task(task_id):
-    """ Edit task """
+    """Edit task"""
     if request.method == "POST":
         is_urgent = "on" if request.form.get("is_urgent") else "off"
         submit = {
@@ -184,20 +184,19 @@ def edit_task(task_id):
             "task_description": request.form.get("task_description"),
             "is_urgent": is_urgent,
             "due_date": request.form.get("due_date"),
-            "created_by": session["user"]
+            "created_by": session["user"],
         }
         mongo.db.tasks.replace_one({"_id": ObjectId(task_id)}, submit)
         flash("Task Successfully Updated")
 
     task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
     departments = mongo.db.departments.find().sort("department_name", 1)
-    return render_template("tasks/edit_task.html", task=task,
-                           departments=departments)
+    return render_template("tasks/edit_task.html", task=task, departments=departments)
 
 
 @app.route("/delete_task/<task_id>")
 def delete_task(task_id):
-    """ Delete task """
+    """Delete task"""
     mongo.db.tasks.delete_one({"_id": ObjectId(task_id)})
     flash("Task Successfully Deleted")
     return redirect(url_for("get_tasks"))
@@ -205,19 +204,16 @@ def delete_task(task_id):
 
 @app.route("/get_departments")
 def get_departments():
-    """ Get department """
+    """Get department"""
     departments = list(mongo.db.departments.find().sort("department_name", 1))
-    return render_template("departments/departments.html",
-                           departments=departments)
+    return render_template("departments/departments.html", departments=departments)
 
 
 @app.route("/add_department", methods=["GET", "POST"])
 def add_department():
-    """ Add department """
+    """Add department"""
     if request.method == "POST":
-        department = {
-            "department_name": request.form.get("department_name")
-        }
+        department = {"department_name": request.form.get("department_name")}
         mongo.db.departments.insert_one(department)
         flash("New Department Added")
         return redirect(url_for("get_departments"))
@@ -227,25 +223,20 @@ def add_department():
 
 @app.route("/edit_department/<department_id>", methods=["GET", "POST"])
 def edit_department(department_id):
-    """ Edit department """
+    """Edit department"""
     if request.method == "POST":
-        submit = {
-            "department_name": request.form.get("department_name")
-        }
-        mongo.db.departments.replace_one({"_id": ObjectId(department_id)},
-                                         submit)
+        submit = {"department_name": request.form.get("department_name")}
+        mongo.db.departments.replace_one({"_id": ObjectId(department_id)}, submit)
         flash("Department Successfully Updated")
         return redirect(url_for("get_departments"))
 
-    department = mongo.db.departments.find_one({"_id":
-                                               ObjectId(department_id)})
-    return render_template("departments/edit_department.html",
-                           department=department)
+    department = mongo.db.departments.find_one({"_id": ObjectId(department_id)})
+    return render_template("departments/edit_department.html", department=department)
 
 
 @app.route("/delete_department/<department_id>")
 def delete_department(department_id):
-    """ Delete category """
+    """Delete category"""
     mongo.db.departments.delete_one({"_id": ObjectId(department_id)})
     flash("Department Successfully Deleted")
     return redirect(url_for("get_departments"))
@@ -274,6 +265,4 @@ def internal_server_error():
 
 
 if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
-            debug=True)
+    app.run(host=os.environ.get("IP"), port=int(os.environ.get("PORT")), debug=True)

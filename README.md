@@ -1,5 +1,5 @@
 # Task Manager #
-_A simple tool to help you get an overview of the workload_
+A simple tool to help you get an overview of the workload.
 
 ![mockup](static/images/wireframes/mockup.png)
 
@@ -41,6 +41,7 @@ This is the third of four Milestone Projects the developer needs to complite, to
 
 The main requirements on this project was to build a full-stack website, where users could manage a common dataset, using **HTML5**, **CSS3**, **JavaScript**, **Python**, **Flask** and **MongoDB**.
 
+---
 ### User Stories ###
 
 * As a general user I want to:
@@ -62,6 +63,7 @@ The main requirements on this project was to build a full-stack website, where u
     * Edit department
     * Delete department
 
+---
 ### User Goals ###
 
 * A simple Task Manager to keep track of the workload with the easy-to-use management system, using the basic **CRUD** functions: Create, Read, Update and Delete. 
@@ -71,6 +73,7 @@ The main requirements on this project was to build a full-stack website, where u
     * Update Tasks
     * Delete Tasks
 
+---
 ### Site Owner Goals ###
 
 * Develop a tool to make the workdays more easy and transparent
@@ -79,10 +82,12 @@ The main requirements on this project was to build a full-stack website, where u
  * The user have the opportunity to update on workload
  * The user gets a simpler and more clear workday
 
+---
 ### Development Planes ###
 
 In order to create an application that fulfilled the expectations as described above, the developer used her experience from her daily work.
 
+---
 ### Strategy ###
 
 Divided into three categories, the website will focus on the following target audiences:
@@ -106,8 +111,10 @@ Divided into three categories, the website will focus on the following target au
     * Structured
     * Work culture
 
+---
 ### Scope ###
 
+---
 #### User Requirements And Expectations ####
 
 * Content that is visually appealing with calm colors
@@ -122,6 +129,7 @@ Divided into three categories, the website will focus on the following target au
 * See all tasks accross departments
 * Admin user has the opportunity to mange the departments
 
+---
 ### Skeleton ###
 
 Wireframes was made in [Balsamiq](https://balsamiq.com/). As in previous projects feedback on using [Figma](https://www.figma.com/), was that Balsamiq was a better choice.
@@ -144,10 +152,12 @@ Wireframes was made in [Balsamiq](https://balsamiq.com/). As in previous project
 ![manage_dep_desk](static/images/wireframes/manage_dep_desk.png)
 ![add_dep_desk](static/images/wireframes/add_dep_desk.png)
 
+---
 ### Changes from wireframes to live site ###
 
 First it was thought that each page would have different background image, but the developer thought the coffee-bean background was great on all pages to keep it consistent. The developer also desided to make a profile page, so that the signed in user have the opportunity to see only the tasks created by them.
 
+---
 ### Design ###
 
 The design of this application has been created based on a "keep it simple" mindset. It has a lot of different user personalities, and it is not an application to hang out on. The users is at work, and it is a quick in and out application. Calm colors without distractions and unnecessary content. 
@@ -156,6 +166,7 @@ When entering the application you immediately see all tasks, the user does not h
 
 [Jinja](https://jinja.palletsprojects.com/) was used to extend the `base.html` page, for consistency accross all pages.
 
+---
 * Fonts
 
 [Google Fonts](https://fonts.google.com/specimen/Roboto): Roboto, sans-serif.
@@ -167,6 +178,7 @@ This Font is used because it is a clean and simple Font.
 
 [Fontawsome](https://fontawesome.com/) provided all the icons used in the application.
 
+---
 * Colours
 
 All the colours where picked to ensure a calm and harmonious impression. 
@@ -180,6 +192,7 @@ All the colours where picked to ensure a calm and harmonious impression.
 Color Sheme from [Coolors](https://coolors.co/)
 ![color_sheme](static/images/wireframes/color_sheme.png)
 
+---
 ### Features ###
 
 The web application has a responsive layout with a reverse mindset relative to the mobile-first way of thinking, as it will be used at the office, and desktop screen.
@@ -212,9 +225,10 @@ Features that will be implemented in the future:
 * Assign tasks to another user
 * Warning when delete, and confirm button
 * Anonnymous suggestion function
-
+---
 ### Technologies ###
 
+---
 ### Languages ###
 
 * [HTML5](https://en.wikipedia.org/wiki/HTML5)
@@ -222,6 +236,7 @@ Features that will be implemented in the future:
 * [JavaScript](https://no.wikipedia.org/wiki/JavaScript)
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
+---
 ### Tools ###
 
 * [Git](https://git-scm.com/)   
@@ -254,7 +269,7 @@ Black Playground, Python code formatter.
 * [jShint](https://jshint.com/)  
 Used to validate JavaScript code.
 
-
+---
 ### Libraries ###
 
 * [Materialize](https://materializecss.com/)    
@@ -284,6 +299,7 @@ This is a required dependency for MongoDB management system.
 * [Jinja](https://palletsprojects.com/p/jinja/)  
 Full-featured template engine for Python, used to extend from `base.html`.
 
+---
 ### Database Management ###
 
 * [MongoDB](https://en.wikipedia.org/wiki/MongoDB)   
@@ -292,16 +308,21 @@ MongoDB was the chosen NoSQL database for this project.
 * [MongoDB Atlas](https://www.mongodb.com/atlas/database)   
 MongoDB Atlas used to host the database in the cloud.
 
+---
 ### Testing ###
 
 The whole test process can be seen in the [TESTING.md](TESTING.md) file.
 
+---
 ### Bugs ###
 
 Bugs are stored in the [TESTING.md](TESTING.md) file.
 
+---
 ### Deployment ###
 
+
+---
 ### Credit ###
 
 The developer has used previous README.md files from MS1 and MS2 as an inspiration. Also previos projects, and The Walkthroug Project with [Tim Nelson](https://www.youtube.com/watch?v=y72Dq3GRxhc).
@@ -314,6 +335,7 @@ Background image by: [Justus Menke](https://unsplash.com/@justusmenke?utm_source
 
 Error image by: [Daniel Tatfjord](https://unsplash.com/@danieltafjord?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/broken-coffee-cup?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
+---
 ### Acknowledgements ###
 
 * My Mentor - Sandeep. He is really amazing to speak with. He is easy to understand, solution oriented and always in a good mood. He is also good at giving feedback on what could have been done in a better way for another time. Really feel I learned a lot from our sessions. He is also good at motivation, and tell me what is good. Really appreciate him!

@@ -294,9 +294,11 @@ MongoDB Atlas used to host the database in the cloud.
 
 ### Testing ###
 
-The whole test process can be seen in the [testing.md](TESTING.md) file.
+The whole test process can be seen in the [TESTING.md](TESTING.md) file.
 
 ### Bugs ###
+
+Bugs are stored in the [TESTING.md](TESTING.md) file.
 
 ### Deployment ###
 

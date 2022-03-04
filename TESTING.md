@@ -154,7 +154,44 @@ Back to [README.md](README.md) file.
 
   Else they liked the background image and the colors. Also the simplicity was appreciated.
 
+* Browser Testing
+
+  Google Chrome and Safari works fine and are corresponding to the screenshots from responsive testing.
+
 ### Automated Testing ###
+
+* HTML was validated using [The W3C Marcup Validation](https://validator.w3.org/)
+
+I asked mentor on how to validate, as it is not pure html code, and also login required, the test is done on the no login required page.
+
+All Tasks:
+
+![all_tasks_validate](static/images/testing/all_tasks_validate.png)
+
+* CSS was validated using [jigsaw.w3](https://jigsaw.w3.org/css-validator/)
+
+![css_validate](static/images/testing/css_validate.png)
+
+There was one warning:
+
+![css_warning](static/images/testing/css_warning.png)
+
+* JavaScript was validated using [JSHint](https://jshint.com/)
+
+![jshint_validate](static/images/testing/jshint_validate.png)
+
+This was throwing two errors: "is only available in ES6 (use 'esversion: 6". This warning I got for the last project as well. There it was solved by adding //jshint esversion: 6 to the .js file. I asked the mentor, and this is only going to be a problem if the browser needs update / is old. And should be fine. So I will just leave it as it is. 
+
+* Python was validated using [PEP8](http://pep8online.com/)
+
+![python_validate](static/images/testing/python_validate.png)
+
+This was in fact ok, no errors. But after using the [Black](https://black.vercel.app/) Python code formatter, it was throwing a lot of "line to long" errors. Talked to mentor about it, and fixed up with the ones that was "good to brake", but recomended to let the others stay. 
+That is why it still have seven errors showing "line to long". 
+
+* [Lighthouse](https://www.webpagetest.org/lighthouse) test:
+
+![lighthouse](static/images/testing/lighthouse.png)
 
 ### Bugs ###
 

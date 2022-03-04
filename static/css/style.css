@@ -60,6 +60,10 @@ input[type=text] {
     color: white;
 }
 
+.push_buttons {
+    margin-left: 46px;
+}
+
 /* Create Task - Lever:after */
 switch label input[type=checkbox]:checked+.lever:after {
     background-color: white;

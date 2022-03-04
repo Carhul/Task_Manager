@@ -3,7 +3,10 @@ _A simple tool to help you get an overview of the workload_
 
 ![mockup](static/images/wireframes/mockup.png)
 
-View the live site [here](#).
+View the live site [here](#).  
+
+Username and password for Admin: Admin - Admin
+
 
 ## Table of contents ##
 

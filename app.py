@@ -170,6 +170,7 @@ def create_task():
 
 
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
+@login_required
 def edit_task(task_id):
     """Edit task"""
     task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})

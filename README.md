@@ -382,7 +382,7 @@ For more information on how to clone a repository, follow the instructions taken
 
 The developer has used previous README.md files from MS1 and MS2 as an inspiration. Also previos projects, and The Walkthroug Project with [Tim Nelson](https://www.youtube.com/watch?v=y72Dq3GRxhc).
 
-Mentor Sandeep Aggarwal was really helpful with the bug related to not get the search function to work. As well as tips and tricks along the way.
+Mentor Sandeep Aggarwal was really helpful with the bug related to not get the search function to work, and error whith the edit_task did not work as it should. As well as tips and tricks along the way.
 
 Credit for deploy section: [Deployment to Heroku](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/ec081e87b3ea48ef986a7bd33f66e3b2/f5dff185642542618202d15605034feb/) from the Code Institute Learning videos.
 

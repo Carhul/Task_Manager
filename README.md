@@ -5,9 +5,6 @@ A simple tool to help you get an overview of the workload.
 
 View the live site [here](http://ms3-taskmanager.herokuapp.com/get_tasks).  
 
-Username and password for Admin: Admin - Admin
-
-
 ## Table of contents ##
 
 * [UX](#ux)

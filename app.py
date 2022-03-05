@@ -14,8 +14,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-DEBUG_MODE = "DEBUG" in os.environ
-
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -276,5 +274,5 @@ def internal_server_error(e):
 
 if __name__ == "__main__":
     app.run(
-        host=os.environ.get("IP"), port=int(os.environ.get("PORT")), debug=DEBUG_MODE
+        host=os.environ.get("IP"), port=int(os.environ.get("PORT")), debug=False
     )

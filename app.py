@@ -179,7 +179,7 @@ def edit_task(task_id):
     if request.method == "POST":
         if task["created_by"] == session["user"]:
             is_urgent = "on" if request.form.get("is_urgent") else "off"
-            submit = {
+            updated_task = {
                 "department_name": request.form.get("department_name"),
                 "task_name": request.form.get("task_name"),
                 "task_description": request.form.get("task_description"),
@@ -187,8 +187,9 @@ def edit_task(task_id):
                 "due_date": request.form.get("due_date"),
                 "created_by": session["user"],
             }
-            mongo.db.tasks.replace_one({"_id": ObjectId(task_id)}, submit)
+            mongo.db.tasks.replace_one({"_id": ObjectId(task_id)}, updated_task)
             flash("Task Successfully Updated")
+            task = updated_task
         else:
             return redirect(url_for("get_tasks"))
 

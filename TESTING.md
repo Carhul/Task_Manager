@@ -4,12 +4,12 @@ Back to [README.md](README.md) file.
 
 ---
 
-## Table of contents ##
+### Table of contents ###
 
-1. [Testing User Stories](#Testing-User_Stories)
-2. [Manual Testing](#Manual-Testing)
-3. [Automated Testing](#Automated-Testing)
-4. [Bugs](#Bugs)
+1. [Testing User Stories](#testing-user_stories)  
+2. [Manual Testing](#manual-testing)  
+3. [Automated Testing](#automated-testing)  
+4. [Bugs](#bugs)  
 
 ![mockup](static/images/wireframes/mockup.png)
 

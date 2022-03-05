@@ -257,6 +257,15 @@ Am I Responsive? Was used througout the building of the project to make sure the
 * [Font Awsome](https://fontawesome.com/)   
 Font Awsome was used to get all the icons on the website.
 
+* [Google Fonts](https://fonts.google.com/)   
+Used to import the desired font.
+
+* [Coloors](https://coolors.co/)    
+Coloors was used to create the color sheme.
+
+* [Lighthouse](https://developers.google.com/web/tools/lighthouse)   
+Used to audit the site for quality.
+
 * [Unsplash](https://unsplash.com/)  
 Unsplash was used to get the background image and the error image for error pages. 
 
@@ -274,6 +283,9 @@ Used to validate CSS.
 
 * [jShint](https://jshint.com/)  
 Used to validate JavaScript code.
+
+* [PEP8](http://pep8online.com/)    
+Used to validate the Python code.
 
 ---
 ### Libraries ###

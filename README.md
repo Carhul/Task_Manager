@@ -266,6 +266,12 @@ Favicon was used to make the Favicon Image.
 * [Black](https://black.vercel.app/)    
 Black Playground, Python code formatter.
 
+* [The W3C Marcup Validation](https://validator.w3.org/)    
+The W3C Marcup was used to validate the HTML.
+
+* [jigsaw.w3](https://jigsaw.w3.org/css-validator/)   
+Used to validate CSS. 
+
 * [jShint](https://jshint.com/)  
 Used to validate JavaScript code.
 

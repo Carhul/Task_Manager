@@ -3,7 +3,7 @@ A simple tool to help you get an overview of the workload.
 
 ![mockup](static/images/wireframes/mockup.png)
 
-View the live site [here](#).  
+View the live site [here](http://ms3-taskmanager.herokuapp.com/get_tasks).  
 
 Username and password for Admin: Admin - Admin
 
